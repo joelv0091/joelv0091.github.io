@@ -1,0 +1,1 @@
+var ptzaction_v2p2 = function(actn,cam) {};var ptzRequest_v2p2 = function(actn,cam) {};

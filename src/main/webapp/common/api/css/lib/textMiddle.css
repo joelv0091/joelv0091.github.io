@@ -1,0 +1,69 @@
+@charset "ISO-8859-1";
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+      transform: translate(-50%, -50%);
+       font-size: 40px;
+      color: wheat;
+}
+
+
+
+ #loading
+{
+font-size:5vh;
+white-space: pre;  /* for Next Line*/
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .centered {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  font-size:40px;
+} */
+
+.centered_old {
+/*    width: 50vw;
+    height: 50vh;
+    background-color: gray;
+    display: flex;
+    align-items: center; 
+    justify-content: center; */
+
+    
+  
+  position: fixed; 
+
+  
+  
+  font-size: 40px;
+
+text-align: center;
+
+margin-left: 40%;
+
+margin-right: 40%;
+
+margin-top: 14%;
+
+}

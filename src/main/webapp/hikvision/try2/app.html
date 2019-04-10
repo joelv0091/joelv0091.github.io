@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent</title>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container{
+            border: solid 1px red;
+            width: 100%;
+            height: calc(100% - 70px);
+            overflow: hidden;
+        }
+        .header{
+            height: 70px;
+            box-sizing: border-box;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        测试主页面嵌入包含webControl的iframe时的方案
+    </h1>
+    <div class="container">
+        <iframe id="frame" style="width: 100%;height:100%;margin: 0;padding: 0;border:none;" src="http://localhost:7080/TrinityLiveStream/hikvision/try2/"></iframe>
+    </div>
+</body>
+<script>
+    //监听子页面iframe的消息，修改title
+	// This is parent
+    var childDomain = 'http://192.168.1.190:5100/';//嵌入的iframe的域名  // Child URL IS GIVEN IN  SRC and childDomain
+    var iframeElem = document.getElementById('frame');
+
+    //给子页面传title信息和iframe相对位置
+    iframeElem.onload = function(){
+    	
+    	
+    	
+        console.log("iframeElem-->", iframeElem.contentWindow.location.href);
+   	 childDomain= ( (iframeElem.contentWindow.location) && (typeof iframeElem.contentWindow.location.href == 'string') ) ?  iframeElem.contentWindow.location.href.replace(iframeElem.contentWindow.location.pathname,'/') :"";
+   	    console.log("childDomain-->",childDomain);
+   	    
+   	    
+   	    
+   	    
+   	    
+   	    
+      iframeElem.contentWindow.postMessage({
+        action:'saveTitle',
+        msg:'将主页面的title传给iframe',
+        info:document.title
+      }, childDomain);
+
+      iframeElem.contentWindow.postMessage({
+        action:'setPosition',
+        msg:'将iframe的相对document的位置传给iframe内部，用于控件定位位置的重新校准',
+        info:{
+          left:iframeElem.offsetLeft,
+          top:iframeElem.offsetTop
+        }
+      }, childDomain);
+
+      iframeElem.contentWindow.postMessage({
+        action:'setWindowAttr',
+        msg:'setWindowAttr',
+        info:{
+          outerWidth: window.outerWidth,
+          innerWidth: window.innerWidth,
+          outerHeight: window.outerHeight,
+          innerHeight: window.innerHeight
+        }
+      }, childDomain);
+    };
+    //监听子页面上发的changeTitle消息，并完成title修改
+    window.addEventListener('message', function(e){
+      console.log(e.data.msg);
+      if(e && e.data){
+        switch (e.data.action){
+          case 'changeTitle':
+            document.title = e.data.info;
+            break;
+        }
+      }
+    });
+
+</script>
+</html>
+
+

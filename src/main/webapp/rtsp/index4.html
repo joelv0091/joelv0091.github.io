@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Player PNaCl</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta name="author" content="videoexpertsgroup" />
+	<meta name="copyright" lang="ru" content="videoexpertsgroup" />
+	<meta name="description" content="Demo VXG Media Player for Chrome" />
+	<meta name="keywords" content=""/>
+	<!-- vxgplayer -->
+	<script type="text/javascript" src="vxgplayer-1.8.51.min.js"></script>
+	<link href="vxgplayer-1.8.51.min.css" rel="stylesheet"/>
+<style>
+::-webkit-media-controls {
+  display:none !important;
+}
+
+.vxgplayer-controls
+{
+ display:none !important;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+       overflow-y:hidden;
+  
+    
+}
+
+</style>
+	<!-- demo page -->
+	<link href="demo.min.css" rel="stylesheet"/>
+<!-- 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link href="zenburn.min.css" rel="stylesheet"> -->
+	<!-- <script src="https://www.videoexpertsgroup.com/nacl_player_api/highlight.min.js"></script> -->
+<!-- 	<script>
+	function fixPlayerSize()
+	{
+		var w =window.innerWidth-50;
+		var h = window.innerHeight-20;
+	//	vxgplayer('vxg_media_player1').size(document.documentElement.clientWidth, document.documentElement.clientHeight); 
+		vxgplayer('vxg_media_player1').size(w, h); 
+	}
+	
+	
+		hljs.initHighlightingOnLoad();
+		var indexPlayer = 1;
+		function createPlayer(){
+			indexPlayer++;
+			var playerId = 'vxg_media_player' + indexPlayer;
+			var div = document.createElement('div');
+			div.setAttribute("id", playerId);
+			div.setAttribute("class", "vxgplayer");
+			var runtimePlayers = document.getElementById('runtimePlayers');
+			runtimePlayers.appendChild(div);
+			vxgplayer(playerId, {
+				url: '',
+				nmf_path: 'media_player.nmf',
+				nmf_src: 'pnacl/Release/media_player.nmf',
+				latency: 300000,
+				aspect_ratio_mode: 1,
+				autohide: 3,
+				controls: true,
+				avsync: true,
+				autoreconnect: 1
+			}).ready(function(){
+				console.log(' =>ready player '+playerId);
+				vxgplayer('vxg_media_player1').size(document.documentElement.clientWidth, document.documentElement.clientHeight); 
+				vxgplayer(playerId).src(document.getElementById('url_input').value);
+				vxgplayer(playerId).play();
+				console.log(' <=ready player '+playerId);
+			});
+		}
+		function removeLatestPlayer(){
+			if(indexPlayer > 1){
+				var playerId = 'vxg_media_player' + indexPlayer;
+				vxgplayer(playerId).dispose();
+				document.getElementById('vxg_media_player' + indexPlayer).remove();
+				indexPlayer--;
+			}
+		}
+		
+		function customDigitalZoomOn(){
+			vxgplayer('vxg_media_player1').custom_digital_zoom(true);
+			digzoom_on.style.display = "none";
+			digzoom_off.style.display = "";
+			digzoom_params.style.display = "";
+			
+		}
+		function customDigitalZoomOff(){
+			vxgplayer('vxg_media_player1').custom_digital_zoom(false);
+			digzoom_on.style.display = "";
+			digzoom_off.style.display = "none";
+			digzoom_params.style.display = "none";
+		}
+			
+		function setCustomDigitalZoom(){
+			try{
+				vxgplayer('vxg_media_player1').setCustomDigitalZoom(parseInt(digzoom_ratio.value,10), parseInt(digzoom_x.value,10), parseInt(digzoom_y.value,10))
+			}catch(e){
+				alert(e);
+			}
+		}
+		
+		function resetCustomDigitalZoom(){
+			vxgplayer('vxg_media_player1').setCustomDigitalZoom(100, 0, 0);
+		}
+		
+	</script> -->
+</head>
+<body  style="padding: 0;margin: 0;height: 100vh;width: 100vw;background-color:black;">
+	
+	
+<!-- 		<div class="content-absolute">
+			<div class="content"> -->
+				<!-- 
+				<ul>
+					<li>
+						URL:
+						<input id="url_input" type="text" size="60" value="rtsp://admin:123456@172.20.1.36:7070/onvif&event&video1">
+						<button onclick="vxgplayer('vxg_media_player1').src(document.getElementById('url_input').value);">Set</button>
+					</li>
+					
+				</ul>
+ -->
+		<!-- 		<div id="runtimePlayers">
+				<div id="vxg_media_player1" 
+
+				class="vxgplayer" url="rtsp://admin:123456@172.20.1.36:7070/onvif&event&video1" onload="fixPlayerSize()" aspect-ratio latency="500" autostart controls avsync></div>
+				</div> -->
+				
+				<div id="vxg_media_player1"></div>
+				<script>
+				
+				function fixPlayerSize(playerId)
+				{
+					var w =window.innerWidth-50;
+					var h = window.innerHeight-20;
+				//	vxgplayer('vxg_media_player1').size(document.documentElement.clientWidth, document.documentElement.clientHeight); 
+					vxgplayer(playerId).size(w, h); 
+				}
+				
+				document.addEventListener("DOMContentLoaded", function(){
+					  // DOM is ready 
+				    console.log('DOMContentLoaded');
+				    startPlayer("vxg_media_player1");
+					});
+				
+				
+				function startPlayer(playerId)
+				{
+					
+					var vw =window.innerWidth-50;
+					var vh = window.innerHeight-20;
+					var cameraurl="rtsp://admin:123456@172.20.1.36:7070/onvif&event&video1";
+
+					vxgplayer(playerId, {
+						url: '',
+					//	nmf_path: 'media_player.nmf',
+					//	nmf_src: 'pnacl/Release/media_player.nmf',
+						latency: 500,
+						aspect_ratio_mode: 1,
+						autohide: 3,
+						controls: true,
+						avsync: true,
+						autoreconnect: 1
+					}).ready(function(){
+						console.log(' =>ready player '+playerId);
+						vxgplayer(playerId).src(cameraurl);
+						vxgplayer(playerId).size(vw, vh); 
+						vxgplayer(playerId).play();
+						console.log(' <=ready player '+cameraurl);
+					});
+
+					
+				}
+/* 				
+			document.getElementById("vxg_media_player1").addEventListener('DOMNodeInserted', function( event ) {
+				    console.log('whoot! a new Element was inserted, see my event object for details!');
+					var w =window.innerWidth-50;
+					var h = window.innerHeight-20;
+				//	vxgplayer('vxg_media_player1').size(document.documentElement.clientWidth, document.documentElement.clientHeight); 
+					vxgplayer('vxg_media_player1').size(w, h); 
+				    
+				}, false);  */
+				</script>
+				<!-- </div>
+				</div> -->
+	
+	</body>
+</html>

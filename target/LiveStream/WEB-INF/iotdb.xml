@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa " xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/data/jpa  http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="dcrmsSessionFactory"></property>
+	</bean>
+	
+	<!-- Hibernate SessionFactory -->
+	<bean id="dcrmsSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dcrmsdataSource" />
+	<!-- 	<property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property> -->
+        <property name="hibernateProperties">
+			<props>
+			<!-- 	<prop key="hibernate.dialect">com.hibernate.dialect.SQLServerUnicodeDialect</prop> -->
+			<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop> 
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.JndiInfinispanRegionFactory</prop>
+				<prop key="hibernate.cache.infinispan.cachemanager" >java:jboss/infinispan/hibernate</prop>
+				<prop key="hibernate.cache.use_query_cache"> false </prop>
+				<prop key="hibernate.generate_statistics"> true </prop>
+				<!-- <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop> -->
+				<prop key="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext </prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>org.trinity.*</value>
+			</list>
+		</property>
+	</bean>              
+	<bean id="dcrmsdataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${connection.driverClassName}" />
+		<property name="jdbcUrl" value="${connection.URL.dcrms}" />
+		<property name="user" value="${connection.username}" />
+		<property name="password" value="${connection.password}" />
+		<property name="minPoolSize" value="5"></property>
+		<property name="maxPoolSize" value="20"></property>
+		<property name="maxIdleTime" value="300"></property>
+	</bean> 
+	
+<!--  	<bean id="dcrmsdataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${connection.driverClassName}" />
+		<property name="jdbcUrl" value="${connection.URL.dcrms}" />
+		<property name="user" value="${connection.username" />
+		<property name="password" value="${connection.password}" />
+		<property name="minPoolSize" value="5"></property>
+		<property name="maxPoolSize" value="20"></property>
+		<property name="maxIdleTime" value="300"></property>
+	</bean> 
+	 -->
+</beans>

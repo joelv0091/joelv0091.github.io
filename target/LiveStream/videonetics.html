@@ -1,0 +1,102 @@
+<html>
+   <head>
+      <link href="videonetics/assets/css/video-js.css" rel="stylesheet">
+      <link rel="stylesheet" href="videonetics/lib/css/font-awesome/font-awesome.min.css">
+      <link rel="stylesheet" href="videonetics/assets/css/jquery.Wload.css">
+      <!--
+         <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+         >
+         -->
+      <!-- 		<link href="lib/css/trinity/declaration.js" rel="stylesheet">
+         -->
+         
+         
+         
+<link rel="stylesheet" href="common/api/css/lib/textMiddle.css">
+
+
+
+
+
+      <script src="videonetics/assets/js/jquery.min.js"></script>
+      <script src="videonetics/assets/js/video.js"></script>
+      <script src="videonetics/assets/js/videojs-contrib-hls.js"></script>
+      <script src="videonetics/assets/js/cookies.js"></script>
+      <script src="videonetics/assets/js/jquery.Wload.js"></script>
+      
+      
+      	<script src="common/api/js/trinity/vms/loading.js"></script>
+      <script src="common/api/lib/integer.api.js"></script>
+      <script src="common/api/js/error/error.js"></script>
+      <script src="videonetics/lib/js/videojs/remove.js"></script>
+      <!-- initializing the Trinity Integration for application  STARTS -->
+      <link rel="stylesheet" href="videonetics/lib/css/trinity/cameraEvent.css" />
+      <script src="videonetics/lib/js/trinity/declaration.js"></script>
+      <!-- initializing the Trinity Integration for application  ENDS -->
+      <!-- initializing the Trinity Integration for application  STARTS -->
+      <script src="videonetics/lib/js/trinity/parameter.js"></script>
+      <script src="videonetics/lib/js/event/ptz.WindowEvent.js"></script>
+      <script src="videonetics/lib/js/videojs/player.js"></script>
+         <!--FOR TESTING PURPOSE--> 
+      <script src="videonetics/lib/js/videonetics/v1/urlCreator.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1/keepalive..js"></script>
+      <script src="videonetics/lib/js/videonetics/v1/startalive.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1/play.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1/ptz.js"></script>
+        <!--FOR TESTING PURPOSE-->
+      <script src="videonetics/lib/js/videonetics/v1.5/urlCreator.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.5/keepalive..js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.5/login.js"></script>
+    
+      <script src="videonetics/lib/js/videonetics/v1.5/startalive.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.5/play.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.5/ptz.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.8/urlCreator.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.8/keepalive..js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.8/login.js"></script>
+      <!--FOR TESTING PURPOSE-->
+      <script src="videonetics/lib/js/videonetics/v1.8/startalive.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.8/play.js"></script>
+      <script src="videonetics/lib/js/videonetics/v1.8/ptz.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2/urlCreator.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2/keepalive..js"></script>
+      <script src="videonetics/lib/js/videonetics/v2/login.js"></script>
+      <!--FOR TESTING PURPOSE-->
+      <script src="videonetics/lib/js/videonetics/v2/startalive.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2/play.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2/ptz.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2.1/urlCreator.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2.1/keepalive..js"></script>
+      <script src="videonetics/lib/js/videonetics/v2.1/login.js"></script>
+      <!--FOR TESTING PURPOSE-->
+      <script src="videonetics/lib/js/videonetics/v2.1/startalive.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2.1/play.js"></script>
+      <script src="videonetics/lib/js/videonetics/v2.1/ptz.js"></script>
+      <script src="videonetics/lib/js/videonetics/version/controller.js"></script>
+      <script src="videonetics/lib/js/videonetics/version/oganiser.js"></script>
+      <!-- 					
+         <script src="videonetics/lib/js/videonetics/v1.8/urlCreator.js"></script>
+         <script src="videonetics/lib/js/videonetics/v1.8/keepalive.js"></script>
+         <script src="videonetics/lib/js/videonetics/v1.8/startalive.js"></script>
+          -->
+      <script src="videonetics/lib/js/trinity/buttonCreation.videojs.js"></script>
+      <script src="config.videonetics.js"></script>
+      <!-- CALLING FUNCTION ENDS -->
+      <script src="videonetics/lib/js/event/listener.WindowEvent.js"></script>
+      <script src="videonetics/lib/js/event/onloader.js"></script>
+      <!-- CALLING FUNCTION ENDS -->
+      <!-- initializing the Trinity Integration for application  ENDS -->
+   </head>
+   <title>TRINITY LIVESTREAM</title>
+      <body style=" background-color: black;">
+      <div id="loading" class="centered">
+         <span class="w_load_content_text"> Loading...</span>
+      </div>
+      <div id="vid" style="display:none">
+         <video id="videohls" width="100vw" height="100vh" class="video-js vjs-default-skin" controls>
+            <source src="http://192.168.1.74:8085/stream/TS_FILES/Live/VMS00000000000000000000C2979D23C/1/MajorStream/Without_Audio/720_512/index.m3u8" type="application/x-mpegURL" />
+         </video>
+      </div>
+   </body>
+</html>
+

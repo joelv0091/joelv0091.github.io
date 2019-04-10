@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta http-equiv="Expires" content="0" />
+
+
+<link rel="stylesheet" href="style/css/app.css">
+
+    <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="http://localhost:5600/">
+
+
+<title>Livestream</title>
+
+<script src="js/lib/jquery-1.12.4.min.js"></script>
+
+<script src="js/lib/jsencrypt.min.js"></script>
+<script src="js/lib/jsWebControl-1.0.0.min.js"></script>
+<script src="js/lib/JsonToXml.js"></script>
+<script src="js/lib/jsWebControl-Bridge.js"></script>
+
+<script src="js/lib/datetimeformater.js"></script>
+<script src="js/lib/parameters.js"></script>
+
+
+
+<script src="js/stream/var.js"></script>
+<script src="js/stream/configBuilder.js"></script>
+<script src="js/stream/alert.js"></script>
+<script src="js/stream/createWindow.js"></script>
+<script src="js/stream/deinitisalise.js"></script>
+<script src="js/stream/encrypt.js"></script>
+<script src="js/stream/eventActions.js"></script>
+<script src="js/stream/hikwindow.js"></script>
+<script src="js/stream/initialise.js"></script>
+<script src="js/stream/initialiseLivestreamPlugin.js"></script>
+
+
+<!-- 
+
+<script src="js/stream/initialisePlaybackPlugin.js"></script>
+<script src="js/stream/playback.js"></script>
+
+ -->
+ 
+ <script src="js/stream/initialiseLivestreamPlugin.js"></script>
+<script src="js/stream/play.js"></script>
+
+
+<script src="js/stream/setWindowOffset.js"></script>
+<script src="js/stream/setWindowPossition.js"></script>
+<script src="js/stream/setWindowResize.js"></script>
+<script src="js/stream/setWindowreset.js"></script>
+<script src="js/stream/stop.js"></script>
+
+
+
+<script src="js/organiser/controller.js"></script>
+
+
+<!-- 
+
+<script src="js/stream/.js"></script>
+<script src="js/stream/.js"></script>
+
+ -->
+ 
+ 
+<script src="js/communication/reverseChannel.js"></script>
+<script src="../config.hikvision.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div id="playWnd" style="height:100px; width:100px" class="col-md-9"playWnd"></div>
+	
+	<!-- 
+		<div class="col-md-3" style="margin-left: 63%;">
+			<div class="item">
+				<button id="stopAllPreview" class="btn">Stop Live View</button>
+			</div>
+			<div class="item">
+				<button id="Deinitialize" class="btn">De-Init</button>
+			</div>
+		</div>
+	 -->
+	
+	</div>
+	<script>
+
+
+
+
+
+
+
+
+
+
+
+
+InitialiseReverseMessenger();
+
+
+initHik();  
+  // remove
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ setTimeout(function () {
+	 playLiveStream();
+   },1000);
+	  
+
+  
+  
+  // iframeElem.contentWindow.location.href
+  //  window.location.href
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+#SingleStream  {
+	display: block;
+	margin-top: 0px;
+	position: left top;
+	width: 100vw;
+	height: 100vh;
+
+
+   /* overflow:hidden;*/
+   overflow-y:hidden;
+max-width:100%;
+max-height:100%;
+object-fit: contain;
+
+
+
+	/*width: 800px;
+	height: 600px;
+		border: 1px solid black;
+		*/
+
+}
+
+#SingleStream[src$='.gif'] {
+    height: 20%;
+      position: absolute;
+  top: 50%;
+  left: 50%;
+      transform: translate(-50%, -50%);
+       font-size: 40px;
+      color: wheat;
+
+}
+
+
+
+
+
+
+
+#SingleStream[src$='.null'] {
+display:none;
+
+}
+
+ #SingleStream[src^='blob:']+p {display:none;} 
+
+
+
+
+
+
+
+
+#SingleStreamMainDiv{
+	height: 100vh;
+}
+/*#container a {
+	padding-right: 10px;
+	color: black;
+}
+#container a:active {
+	padding-right: 10px;
+	color: #cacaca;
+}
+#container p {
+	width: 800px;
+}
+
+#container #quick {
+	font-weight: bold;
+	color: red;
+}
+
+#container #cameras img {
+	float: left;
+	margin: 10px;
+	width: 300px;
+	height: auto;
+}
+
+#container #localCamera {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+*/
+#container #localCamera button {
+    display: block;
+}
+
+#container #localCamera canvas {
+   /* display: none;*/
+   display: block;
+
+}
+
+#container #localCamera video {
+    height: 200px;
+}
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+     overflow-y:hidden;
+	 overflow-x: hidden;
+  /*    background-color: black; */
+}
+
+
+
+
+
+p#demo {
+    background-color: #da2323;
+}

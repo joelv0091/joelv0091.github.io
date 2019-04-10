@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<TITLE>Player Wrapper</TITLE>
+</HEAD>
+<BODY bgcolor="EEEEFF" style="margin: 0px;">
+
+	<OBJECT id=PlayerWrapper height=309 width=417 classid="CLSID:D7982E2E-D981-4A91-8053-3B2DC6D21EDD">
+	</OBJECT>
+
+	<SCRIPT LANGUAGE="JavaScript">
+		function getUrlParameter(name)
+		{ 
+			name = name.replace(/[\[]/,'\\\[').replace(/[\]]/,'\\\]'); 
+			var regexS = '[\\?&]'+name+'=([^&#]*)'; 
+			var regex = new RegExp( regexS ); 
+			var results = regex.exec( window.location.href ); 
+			if( results == null ) return ''; 
+			else return results[1].replace(/%20/g,' ');
+		}
+		
+		function resizePlayer()
+		{
+			var width = '100%'; //parseInt(getUrlParameter('width'), 10);
+			var height = '100%'; //parseInt(getUrlParameter('height'), 10);
+			
+			document.getElementById('PlayerWrapper').setAttribute('width', width);
+			document.getElementById('PlayerWrapper').setAttribute('height', height);
+		}
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    window.location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+		function initializePlayer()
+		{
+			var site = '192.168.1.27'; //new String(getUrlParameter('site'));
+			var recorder = '192.168.1.27'; //new String(getUrlParameter('recorder'));
+		//	var channel = '1'; //parseInt(getUrlParameter('cameraId'), 10);
+			var channel =findGetParameter('cameraId');
+			
+			if (PlayerWrapper.Initialize(site, recorder, channel))
+				{document.title = document.title + ' [Initialized Successfully]';}
+			else
+				{window.alert('Player failed to initialize');}
+
+playLive();
+
+		}
+		
+		function resetPlayer()
+		{
+			if (!PlayerWrapper.ResetPlayer())
+				window.alert('ResetPlayer operation failed');
+		}
+		
+		function playLive()
+		{
+			if (!PlayerWrapper.PlayLive())
+				window.alert('PlayLive operation failed');
+		}
+		
+		function pauseLive()
+		{
+			if (!PlayerWrapper.PauseLive())
+				window.alert('PauseLive operation failed');
+		}
+		
+		function playRecorded()
+		{
+			// expected format: '2008-12-22 09:10:00'
+			var starttime = getUrlParameter('starttime');
+			var endtime = getUrlParameter('endtime');
+			
+			if (!PlayerWrapper.PlayRecorded(starttime, endtime))
+			{
+				window.alert('PlayRecorded operation failed');
+			}
+		}
+		
+		function stopRecorded()
+		{
+			if (!PlayerWrapper.StopRecorded())
+				window.alert('StopRecorded operation failed');
+		}
+		
+		function pauseRecorded()
+		{
+			if (!PlayerWrapper.PauseRecorded())
+				window.alert('PauseRecorded operation failed');
+		}
+		
+		function resumeRecorded()
+		{
+			if (!PlayerWrapper.ResumeRecorded())
+				window.alert('ResumeRecorded operation failed');
+		}
+		
+		function forward()
+		{
+			var fSpeed = parseFloat(speed.value);
+			if (!PlayerWrapper.Forward(fSpeed))
+				window.alert('Forward operation failed');
+		}
+		
+		function rewind()
+		{
+			var fSpeed = parseFloat(speed.value);
+			if (!PlayerWrapper.Rewind(fSpeed))
+				window.alert('Rewind operation failed');
+		}
+	</SCRIPT>
+
+		<SCRIPT LANGUAGE="JavaScript">
+		initializePlayer();
+		
+		resizePlayer();
+	</SCRIPT>
+	
+</BODY>
+</HTML>
+

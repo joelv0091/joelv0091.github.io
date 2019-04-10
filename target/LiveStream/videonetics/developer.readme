@@ -1,0 +1,19 @@
+
+-----------------------------------
+LIVESTREAM VMS  SERVER FINDING METHOD
+-----------------------------------
+
+FIRST CHECK
+  WHICH COMPANY -> will append to "parent"
+	LiveStreamObject.connect.server.child TO LiveStreamObject.connect.server.parent
+2nd CHECK
+  CHECK VMS OR ITMS -> will append to "details"
+	LiveStreamObject.connect.server.parent.vms TO LiveStreamObject.connect.server.stream 
+
+
+-----------------------------------
+ENDS
+-----------------------------------
+
+
+

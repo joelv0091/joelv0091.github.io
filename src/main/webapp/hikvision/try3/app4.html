@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parent</title>
+<style>
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	border: solid 1px red;
+	width: 100%;
+	height: calc(100% - 70px);
+	overflow: hidden;
+}
+
+.header {
+	height: 70px;
+	box-sizing: border-box;
+	margin: 0;
+	overflow: hidden;
+}
+</style>
+
+<script src="../../vmsapi/stream.client.initialise.js"></script>
+<script src="../../vmsapi/stream.client.forwardChannel.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+
+		<!-- 
+    
+           
+    
+     -->
+     	<h1>IFRAME1</h1>
+		<iframe id="frame1"
+			style="width: 100%; height: 100%; margin: 0; padding: 0; border: none;"
+			src="http://localhost:7080/TrinityLiveStream/hikvision/try3/"
+			onload="loadLivestreamElement(this.id)"></iframe>
+				<h1>IFRAME2</h1>
+<iframe id="frame2"
+			style="width: 100%; height: 100%; margin: 0; padding: 0; border: none;"
+			src="http://localhost:7080/TrinityLiveStream/hikvision/try3/"
+			onload="loadLivestreamElement(this.id)"></iframe>
+		<!--
+        <iframe id="frame" style="width: 100%;height:100%;margin: 0;padding: 0;border:none;" src="http://localhost:7080/TrinityLiveStream/hikvision/try3/" ></iframe>
+          -->
+
+
+	</div>
+</body>
+<script>
+	// InitisaliseLivestreamElemnt('frame'); // call after craete each element in view side
+	InitialiseForwardMessenger(); // call one time in the main application
+</script>
+</html>
+
+

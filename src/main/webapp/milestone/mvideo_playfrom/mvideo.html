@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Single Live</title>
+
+	
+	
+	
+	
+	<!-- DiffieHellman encryption -->
+	<script src="milestone/js/security/aes.js"></script>
+	<script src="milestone/js/security/base64.js"></script>
+	<script src="milestone/js/security/BigInt.js"></script>
+	<script src="milestone/js/security/sha256.js"></script>
+	<script src="milestone/js/security/DiffieHellman.js"></script>
+	
+	<!-- parsing frames -->
+	<script src="milestone/js/VideoConnectionItem.js"></script>
+	
+
+	<!-- initializing the Trinity Integration for application  STARTS -->
+		<script src="milestone/js/trinity/declaration.js"></script>
+		<script src="milestone/js/trinity/getCamera.js"></script>
+		<script src="milestone/js/trinity/ptz.js"></script>
+
+		<script src="milestone/js/trinity/parameter.js"></script>
+		<script src="milestone/js/trinity/onloader.js"></script>
+
+<!-- initializing the Trinity Integration for application  ENDS -->
+
+
+
+
+
+
+	<!-- initializing the application -->
+
+	<script src="milestone/js/main.js"></script>
+	
+	<!-- communication - over the command and video channel -->
+	<script src="milestone/js/commandChannel.js"></script>
+    <script src="milestone/js/AjaxRequest.js"></script>
+    <script src="milestone/js/Bytes.js"></script>
+	<script src="milestone/js/WebSocketRequest.js"></script>
+	
+	<!-- commands -->
+	<script src="milestone/js/connect.js"></script>
+	<script src="milestone/js/liveMessage.js"></script>
+	<script src="milestone/js/login.js"></script>
+	<script src="milestone/js/getAllCameras.js"></script>
+	
+	
+	<script src="milestone/js/requestStream.video.js"></script>
+	<script src="milestone/js/requestAllStreams.js"></script>
+	
+	
+	<script src="milestone/js/requestFrames.video.js"></script>
+	
+	
+	
+	
+    <script src="milestone/js/videoPush.js"></script>
+	<link rel="stylesheet" href="milestone/css/main.css" />
+	<link rel="stylesheet" href="milestone/css/trinity/cameraEvent.css" />
+		<script src="config.milestone.js"></script>
+	
+</head>
+
+<body>
+
+
+
+<!-- 
+	<div id="san-cameraController">
+		<img class="left-controller action" value="Left"  src="milestone\media\image\trinity\leftBtn.png"/>
+		<img class="right-controller  action" value="Right"   src="milestone\media\image\trinity\rightBtn.png" />
+		<img class="up-controller action" value="Up"    src="milestone\media\image\trinity\upBtn.png" />
+		<img class="down-controller action" value="Down"    src="milestone\media\image\trinity\downBtn.png"/>
+		<div class="zoom-controller">
+			<div class="zoomIn"><img  class="action" class="action"  value="ZoomIn"   src="milestone\media\image\trinity\zoomInBtn.png"/></div>
+			<div class="zoomOut"><img value="ZoomOut"  class="action"  src="milestone\media\image\trinity\zoomOutBtn.png"/></div>	
+		</div>
+		<div class="action-controller">
+			<div class="home"><img value="Home"  class="action" src="milestone\media\image\trinity\homeBtn.png"/></div>
+			<div class="refresh"><img value="0"  class="action" src="milestone\media\image\trinity\refreshBtn.png"/></div>	
+		</div>
+	</div>
+ -->
+  <img  id="SingleStream" src="media\image\loading\worlOnDot.gif" alt="Smiley face" height="100%" width="100%"> 
+
+	<script>
+	
+	 window.addEventListener('load', function() {
+		 LiveStreamObject.camera.mode =2;// savedvideo
+		 OnloadFunction();		
+
+		 	});
+	 
+	 
+	 
+	</script>
+</body>
+</html>

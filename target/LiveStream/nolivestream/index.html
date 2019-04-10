@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+    
+}
+
+
+
+/* *:: not(img.nolivestream *)  */
+*:: not(img.nolivestream)
+{
+
+     overflow-y:hidden;
+    
+
+}
+
+
+ /*    background-size:     cover;                     <------ */
+.bodyclass {
+    background-image:    url(../common/media/na/nolivestream.jpg);
+ 
+    background-size: 100vw 100vh;
+    background-repeat:   no-repeat;
+    background-position: center center;              /* optional, center the image */
+}
+</style>
+				
+</head>
+<body bgcolor="black">
+
+				<img   class="nolivestream" src="../common/media/na/noLiveStream2.png" style='height: 95vh; width: 95vw; object-fit: contain'/> 
+</body>
+</html>

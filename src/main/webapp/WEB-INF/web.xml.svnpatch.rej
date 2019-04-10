@@ -1,0 +1,12 @@
+--- main/webapp/WEB-INF/web.xml
++++ main/webapp/WEB-INF/web.xml
+@@ -14,8 +18,7 @@
+ 
+     <init-param>
+       <param-name>log4j-init-file</param-name>
+-      <param-value>C:/ICCC_Configuration/APSFL/TrinityLiveStream/log4j.properties</param-value>
+-     <!--  <param-value>file:///C:/ICCC_Configuration/TrinityLiveStream/log4j.properties</param-value> -->
++      <param-value>C:/ICCC_Configuration/TrinityLiveStream/log4j.properties</param-value>
+     </init-param>
+ 
+     <load-on-startup>1</load-on-startup>
