@@ -1,1 +1,0 @@
-function predefinedptz_v2p2(input) {}var contextMenu_v2p2 = function() {};

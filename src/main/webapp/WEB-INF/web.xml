@@ -6,32 +6,15 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
-  <!-- 
-Remove servlet-name log4j-init.
-For taking Class Path
- -->
- 
-   <servlet>
+  <servlet>
     <servlet-name>log4j-init</servlet-name>
     <servlet-class>com.trinity.util.Log4jInit</servlet-class>
-
     <init-param>
       <param-name>log4j-init-file</param-name>
       <param-value>C:/ICCC_Configuration/TrinityLiveStream/log4j.properties</param-value>
     </init-param>
-
-<!--    
-    <init-param>
-      <param-name>log4j-init-file</param-name>
-      <param-value>C:/ICCC_Configuration/APSFL/TrinityLiveStream/log4j.properties</param-value>
-    </init-param>
--->
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
-  
-  
   <servlet-mapping>
     <servlet-name>springrest</servlet-name>
     <url-pattern>/api/*</url-pattern>

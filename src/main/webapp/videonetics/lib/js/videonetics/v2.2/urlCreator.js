@@ -1,1 +1,0 @@
-function urlcreator_v2p2(situvtn){}

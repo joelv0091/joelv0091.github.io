@@ -6,7 +6,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <property name="context-root" value="TrinityLiveStream"/>
         <property name="java-output-path" value="/TrinityLiveStream/target/classes"/>
+        <property name="context-root" value="App"/>
     </wb-module>
 </project-modules>
