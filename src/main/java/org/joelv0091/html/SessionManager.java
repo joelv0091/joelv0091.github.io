@@ -1,5 +1,5 @@
 
-package org.trinity.html;
+package org.joelv0091.html;
 
 import java.io.IOException;
 import java.util.HashMap;

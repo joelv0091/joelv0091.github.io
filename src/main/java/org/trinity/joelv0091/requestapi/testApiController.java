@@ -1,4 +1,4 @@
-package org.trinity.videonetics.requestapi;
+package org.trinity.joelv0091.requestapi;
 
 // import java.awt.PageAttributes.MediaType;
 import java.io.BufferedReader;
@@ -47,15 +47,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.joelv0091.util.LocalSettings;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import com.trinity.util.LocalSettings;
 
 @RestController
 //@CrossOrigin
-@RequestMapping(value = "/videonetcs/unified")
-public class unifiedApiController {
+@RequestMapping(value = "/test/unified")
+public class testApiController {
 
 	// public static String jSessionId = null;
 	// public static String jSessionCookieValue = null;
@@ -65,7 +65,7 @@ public class unifiedApiController {
 	public static String ErrorTextStack = "";
 	public static String LogTextStackStack = "";
 
-	Logger logger = Logger.getLogger(unifiedApiController.class);
+	Logger logger = Logger.getLogger(testApiController.class);
 
 	@RequestMapping(value = "session/reset", method = RequestMethod.GET, headers = "Accept=application/json")
 	public boolean sessionReset() {

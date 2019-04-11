@@ -1,4 +1,4 @@
-package com.trinity.util;
+package com.joelv0091.util;
 
 import java.io.File;
 import java.io.FileInputStream;

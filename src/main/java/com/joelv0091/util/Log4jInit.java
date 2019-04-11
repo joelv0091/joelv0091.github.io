@@ -1,4 +1,4 @@
-package com.trinity.util;
+package com.joelv0091.util;
 
 
 import org.apache.log4j.PropertyConfigurator;

@@ -1,4 +1,4 @@
-package org.trinity.html;
+package org.joelv0091.html;
 
 
 import org.apache.http.HttpResponse;
@@ -9,6 +9,7 @@ import org.apache.http.conn.ssl.SSLContextBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.log4j.Logger;
+import org.joelv0091.html.SessionManager;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,8 +26,6 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.trinity.html.SessionManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -1,4 +1,4 @@
-package org.trinity.videonetics.requestapi;
+package org.trinity.joelv0091.requestapi;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,10 +30,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.joelv0091.util.LocalSettings;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import com.trinity.util.LocalSettings;
 
 @RestController
 //@CrossOrigin
