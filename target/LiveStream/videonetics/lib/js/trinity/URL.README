@@ -1,9 +1,0 @@
-///REST/local/live/keeplive/{streamsessionid}
-//192.168.1.212:8085/i-apiserver/REST/local/live/keeplive/1518851121866
-//http://192.168.1.212:8085/stream/TS_FILES/Live/VMS00000000000000000000C2979D23C/1/MajorStream/Without_Audio/720_512/index.m3u8 
-
-//"http://192.168.1.212:8085/i-apiserver/stream/TS_FILES/Live/VMS00000000000000000000C2979D23C/3/MajorStream/Without_Audio/1024_712/index.m3u8"
-
-
-
-file:///E:/RedEye/REDi_SVNWS/SmartCity/V3_Devolepment/RND_MAIN/DVM/Videonetics/Live/index.html?cameraId=3
