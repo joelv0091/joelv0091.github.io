@@ -117,24 +117,36 @@ function IsValidJSONString(str) {
     return false;
 }
 
-function configLoad()
+function configLoad(id)
 {
-	let jsonStr= document.getElementById("textarea.config.json").value;
-	
+	let jsonStr= document.getElementById(id).value;
 	return IsValidJSONString(jsonStr);//JSON.parse(jsonStr);
 }
 
+function beutifyer(id)
+{
+	console.log("ID---",id);
+	let jsonStr= document.getElementById(id).value;
+	document.getElementById(id).value= 
+										JSON.stringify(
+												JSON.parse(
+														jsonStr
+															),undefined, 2
+														);
+	
+}
 
 function ConfigJsonAction()
 {
-	let configJson =configLoad();
+	let configJson =configLoad("textarea.config.json");
 	if (configJson===false)
 		{
 		alert("JSON not valid");
 		}
 	else
 		{
-		console.log("JSON valid---",configJson);
+		//console.log("JSON valid---",configJson);
+		 beutifyer("textarea.config.json");
 		AddList(configJson);
 		loadApplication(configJson);
 		}
