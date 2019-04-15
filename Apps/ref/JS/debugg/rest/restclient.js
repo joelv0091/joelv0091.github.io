@@ -21,7 +21,7 @@ if (settings.data) {
 	outputRequestEl.removeAttribute("hidden");
 }
 
-var finalURL = /*"https://reqres.in/api/" +*/baseURL+ settings.url;
+var finalURL = baseURL+ settings.url;
 urlEl.innerHTML = finalURL;
 
 outputResponseEl.innerHTML = "";

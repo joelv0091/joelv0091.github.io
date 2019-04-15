@@ -5,6 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/Apps" source-path="/Apps"/>
         <property name="java-output-path" value="/bolt.sample.apps/target/classes"/>
         <property name="context-root" value="App1"/>
     </wb-module>
