@@ -46,7 +46,7 @@ xhr.onload = function() {
 		}
 	else
 		{
-		alert("xhr.responseText -> "+xhr.responseText);
+		//alert("xhr.responseText -> "+xhr.responseText);
 		outputResponseEl.innerHTML = syntaxHighlight(xhr.responseText);
 		}
 	
