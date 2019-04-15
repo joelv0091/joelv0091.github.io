@@ -153,7 +153,7 @@ function loadApplication(config) {
 		
 		
 		el.addEventListener("click", function(e) {
-			var element = e.currentTarget,
+			var element = e.currentTarget;
 			
 			
 			
